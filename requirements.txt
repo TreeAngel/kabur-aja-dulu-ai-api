@@ -1,0 +1,15 @@
+fastapi==0.131.0
+uvicorn[standard]==0.48.0
+pydantic==2.12.5
+pydantic-settings==2.14.1
+python-multipart==0.0.29
+python-dotenv==1.2.2
+
+# AI / ML
+tensorflow==2.21.0
+numpy==2.4.0
+google-genai==2.7.0
+
+# Utilities
+aiofiles==25.1.0
+httpx==0.28.1

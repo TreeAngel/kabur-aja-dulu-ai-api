@@ -1,13 +1,10 @@
 """
 Core configuration — loads settings from .env via pydantic-settings.
 """
-import os
 from pathlib import Path
-from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
-load_dotenv('../../')
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -21,16 +18,16 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     APP_ENV: str = "development"
     DEBUG: bool = False
-
-    # Gemini
-    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY") or "[GCP_API_KEY]"
-
-    # Paths
-    ARTIFACTS_DIR: str = "artifacts"
-
+    
     # Server
     HOST: str = "0.0.0.0"
     PORT: int = 8000
+
+    # Gemini
+    GEMINI_API_KEY: str
+
+    # Paths
+    ARTIFACTS_DIR: str = BASE_DIR / "artifacts"
 
     @property
     def artifacts_path(self) -> Path:

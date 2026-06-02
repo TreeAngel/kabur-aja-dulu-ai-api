@@ -28,6 +28,7 @@ async def generate_roadmap_endpoint(body: RoadmapRequest) -> RoadmapResponse:
             cv_text=body.cv_text,
             skills_extracted=body.skills_extracted,
             role=body.role,
+            language=body.language,
         )
         return RoadmapResponse(
             success=True,

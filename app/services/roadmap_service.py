@@ -32,7 +32,7 @@ async def generate_roadmap(
     cv_text: str,
     skills_extracted: list[str],
     role: str,
-    language: str = "English",
+    language: str,
 ) -> dict[str, str]:
     """
     Generate a career roadmap via Gemini.

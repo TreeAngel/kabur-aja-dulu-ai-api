@@ -14,7 +14,7 @@ from app.core.logger import logger
 
 _client: Optional[genai.Client] = None
 
-DEFAULT_MODEL = "gemini-2.5-flash-lite"
+DEFAULT_MODEL = "gemini-3.1-flash-lite"
 
 def _init_client() -> genai.Client:
     global _client

@@ -7,8 +7,6 @@ FastAPI backend with Gemini API integration for CV analysis and career roadmap g
 - **FastAPI** + **Pydantic v2** — API framework & validation
 - **TensorFlow 2.18** — Role classification model inference
 - **Google Gemini** — Career roadmap & CV feedback generation
-- **pdfplumber** — PDF text extraction
-- **EasyOCR** — Image-based CV text extraction
 
 ---
 

@@ -7,8 +7,6 @@ FastAPI backend with Gemini API integration for CV analysis and career roadmap g
 - **FastAPI** + **Pydantic v2** — API framework & validation
 - **TensorFlow 2.18** — Role classification model inference
 - **Google Gemini** — Career roadmap & CV feedback generation
-- **pdfplumber** — PDF text extraction
-- **EasyOCR** — Image-based CV text extraction
 
 ---
 
@@ -37,7 +35,7 @@ copy .env.example .env
 ### 3. Run the Server
 
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 ### 4. Access Documentation
@@ -73,7 +71,7 @@ kabur-aja-dulu-ai-api/
 │   ├── utils/              # Text cleaner, PDF/image parsers
 │   ├── ai/                 # Model singleton, Gemini client
 │   └── main.py             # FastAPI app entry point
-├── artifacts/              # Model artifacts (auto-copied from ../models/)
+├── artifacts/              # Model artifacts
 ├── prompts/                # Gemini prompt templates
 ├── requirements.txt
 ├── .env.example
@@ -113,4 +111,4 @@ Edit the placeholder prompts in `prompts/`:
 - `prompts/roadmap_prompt.txt` — Career roadmap generation prompt
 - `prompts/cv_feedback_prompt.txt` — CV analysis feedback prompt
 
-Variables available: `{role}`, `{skills}`, `{cv_text}`
+Variables available: `{role}`, `{skills}`, `{cv_text}`, `{languange}`
